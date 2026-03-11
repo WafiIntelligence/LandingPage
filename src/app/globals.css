@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand */
+  --color-brand-blue: #7BB0FF;
+  --color-brand-cyan: #8AE6FF;
+  --color-brand-blue-dim: rgba(123, 176, 255, 0.15);
+  --color-brand-cyan-dim: rgba(138, 230, 255, 0.1);
+
+  /* Backgrounds */
+  --color-bg-base: #080b14;
+  --color-bg-elevated: #0d1020;
+  --color-bg-glass: rgba(255, 255, 255, 0.04);
+
+  /* Text */
+  --color-text-primary: #eef2ff;
+  --color-text-secondary: #8892b0;
+  --color-text-muted: #4a5568;
+
+  /* Borders */
+  --color-border-glass: rgba(255, 255, 255, 0.08);
+  --color-border-brand: rgba(123, 176, 255, 0.2);
+
+  /* Semantic */
+  --color-success: #4ade80;
+  --color-error: #f87171;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+
+/* Hero background gradient */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(123, 176, 255, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(138, 230, 255, 0.06) 0%, transparent 60%),
+    #080b14;
+}
+
+/* CSS blob animation — GPU-accelerated transform only */
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: blob-drift 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes blob-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, -20px) scale(1.05); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob {
+    animation: none;
+  }
+}
