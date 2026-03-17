@@ -76,6 +76,16 @@ input,
 textarea,
 select {
   color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280;
+  -webkit-text-fill-color: #6b7280;
+}
+
+input:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
   -webkit-text-fill-color: white;
 }
 

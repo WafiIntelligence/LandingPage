@@ -12,8 +12,8 @@ type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 const inputClass =
   'w-full bg-white/[0.05] border border-white/[0.10] rounded-xl px-4 py-3 ' +
-  'font-inter text-white text-base placeholder:text-white/30 ' +
-  'focus:outline-none focus:border-brand-blue/60 focus:bg-white/[0.07] focus:placeholder:text-white/10 ' +
+  'font-inter text-white text-base placeholder:text-[#6b7280] ' +
+  'focus:outline-none focus:border-brand-blue/60 focus:bg-white/[0.07] focus:placeholder:text-[#4a5568] ' +
   'transition-all duration-200 caret-white';
 
 const labelClass = 'block font-inter text-sm font-medium text-[#8892b0] mb-2';

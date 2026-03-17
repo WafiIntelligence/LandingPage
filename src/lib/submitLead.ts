@@ -3,15 +3,8 @@ import type { LeadPayload } from '@/types/lead';
 export async function submitLead(
   payload: LeadPayload
 ): Promise<{ ok: boolean; error?: string }> {
-  const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
-
-  if (!webhookUrl) {
-    console.error('NEXT_PUBLIC_N8N_WEBHOOK_URL is not set');
-    return { ok: false, error: 'Configuration error — webhook URL not set.' };
-  }
-
   try {
-    const res = await fetch(webhookUrl, {
+    const res = await fetch('/api/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
