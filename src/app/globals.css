@@ -70,3 +70,28 @@ body {
     animation: none;
   }
 }
+
+/* ── Form element base resets ─────────────────────────── */
+input,
+textarea,
+select {
+  color: var(--color-text-primary);
+  -webkit-text-fill-color: var(--color-text-primary);
+}
+
+/* ── Browser autofill override ────────────────────────── */
+/* Chrome/Safari force black text inside autofilled inputs via internal UA styles.
+   The only reliable fix is overriding -webkit-text-fill-color and
+   box-shadow (to cancel the yellow/blue autofill background tint). */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #eef2ff;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset;
+  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #eef2ff;
+}
