@@ -75,8 +75,8 @@ body {
 input,
 textarea,
 select {
-  color: var(--color-text-primary);
-  -webkit-text-fill-color: var(--color-text-primary);
+  color: white;
+  -webkit-text-fill-color: white;
 }
 
 /* ── Browser autofill override ────────────────────────── */
@@ -89,9 +89,9 @@ input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
-  -webkit-text-fill-color: #eef2ff;
+  -webkit-text-fill-color: white;
   -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset;
   box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset;
   transition: background-color 5000s ease-in-out 0s;
-  caret-color: #eef2ff;
+  caret-color: white;
 }
